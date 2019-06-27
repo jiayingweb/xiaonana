@@ -40,6 +40,18 @@ function gettime(){
 }
 
 
+// 笑话数组函数
+
+
+function xiaohua(){
+
+    var xhh=['笑话1','笑话2','笑话3','笑话4','笑话5 ', '笑话6' ];
+    var r=Math.floor(Math.random()*xhh.length);
+    var w=xhh[r];
+    return w;
+}
+
+
 var jmm = prompt("欢迎使用小娜 \n" +
     "<输入编号>或者输入<关键字>选择功能,输入q退出聊天功能\n" +
     "1.计算总和\n" +
@@ -75,9 +87,8 @@ switch (jmm) {
 
     case '3':
     case '笑话':
-            var xhh=['笑话1','笑话2','笑话3','笑话4','笑话5 ', '笑话6' ];
-            var r=Math.floor(Math.random()*xhh.length);
-            alert(xhh[r]);
+         w=xiaohua();
+         alert(w);
             break;
 
 }
