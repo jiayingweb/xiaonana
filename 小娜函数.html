@@ -51,6 +51,22 @@ function xiaohua(){
     return w;
 }
 
+//按钮1的数组和
+function shuzu(arr){
+    var sum = 0;
+        for (var i = 0; i < arr.length; i++) {
+            sum += parseFloat(arr[i]);
+        }
+        return sum;
+}
+
+// 把处理输入1的逻辑，也可以封装成函数，可以把代码简化
+function inputOne() {
+    var numbers = prompt('请输入数字,以-隔开');
+        var arr = numbers.split('-');
+        sum=shuzu(arr);
+    return sum;
+}
 
 var jmm = prompt("欢迎使用小娜 \n" +
     "<输入编号>或者输入<关键字>选择功能,输入q退出聊天功能\n" +
@@ -66,13 +82,9 @@ switch (jmm) {
     case '1':
     case '总和':
 
-        var numbers = prompt('请输入数字,以-隔开');
-        var arr = numbers.split('-');
-        var sum = 0;
-        for (var i = 0; i < arr.length; i++) {
-            sum += parseFloat(arr[i]);
-        }
+        sum=inputOne();
         alert(sum);
+        break;
 
 
     // 功能2
