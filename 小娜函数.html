@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+  for (var b = 1; b < 6; b++) {
+
+    // 把月下面的变为函数
+    function patchnumber(number){
+        if(number<10){
+            number='0'+number;
+        }
+        return number;
+    }
+
+
+
+var jmm = prompt("欢迎使用小娜 \n" +
+    "<输入编号>或者输入<关键字>选择功能,输入q退出聊天功能\n" +
+    "1.计算总和\n" +
+    "2.显示时间\n" +
+    "3.讲个笑话"
+);
+if (jmm === "q") {
+    alert('你真的不要我了吗')
+    break;
+}
+switch (jmm) {
+    case '1':
+    case '总和':
+
+        var numbers = prompt('请输入数字,以-隔开');
+        var arr = numbers.split('-');
+        var sum = 0;
+        for (var i = 0; i < arr.length; i++) {
+            sum += parseFloat(arr[i]);
+        }
+        alert(sum);
+
+
+    // 功能2
+
+    case '2':
+    case '时间':
+
+        var date = new Date();
+        var year = date.getFullYear();
+        var month = date.getMonth() + 1;
+        var day = date.getDate();
+        var hours = date.getHours();
+        var minutes = date.getMinutes();
+        var seconds = date.getSeconds();
+        month=patchnumber(month);
+        day=patchnumber(day);
+        hours=patchnumber(hours);
+        minutes=patchnumber(minutes);
+        seconds=patchnumber(seconds);
+        var time = ('现在的时间是' + ' ' + year + '-' + month + '-' + day + ' ' + hours + ':' + minutes + ':' + seconds);
+        alert(time);
+
+        break;
+
+
+    case '3':
+    case '笑话':
+            var xhh=['笑话1','笑话2','笑话3','笑话4','笑话5 ', '笑话6' ];
+            var r=Math.floor(Math.random()*xhh.length);
+            alert(xhh[r]);
+            break;
+
+}
+
+
+
+
+
+
+
+
+
+
+}
+
+
+
+
+</script>
+</html>
