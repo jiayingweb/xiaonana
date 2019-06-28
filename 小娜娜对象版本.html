@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+</body>
+
+<script>
+
+    function XiaoNa(){
+        // 咨询
+        this.zixun=function(){
+            var jmm = prompt("欢迎使用小娜 \n" +
+    "<输入编号>或者输入<关键字>选择功能,输入q退出聊天功能\n" +
+    "1.计算总和\n" +
+    "2.显示时间\n" +
+    "3.讲个笑话"
+            );
+            return jmm;
+
+        }
+        this.one=function(){
+
+            var joke=prompt('请输入数字,以逗号隔开');
+
+            var arr=joke.split('-');
+
+            var sum=0;
+            for(var i=0; i<arr.length;i++){
+                sum += parseFloat(arr[i]);
+
+            }
+            alert(sum);
+            
+        }
+        function patchnumber(number){
+        if(number<10){
+            number='0'+number;
+        }
+        return number;
+    }
+        this.two=function(){
+
+            var date = new Date();
+
+        var year = date.getFullYear();
+        var month = date.getMonth() + 1;
+        var day = date.getDate();
+        var hours = date.getHours();
+        var minutes = date.getMinutes();
+        var seconds = date.getSeconds();
+        month=patchnumber(month);
+        day=patchnumber(day);
+        hours=patchnumber(hours);
+        minutes=patchnumber(minutes);
+        seconds=patchnumber(seconds);
+        var time = ('现在的时间是' + ' ' + year + '-' + month + '-' + day + ' ' + hours + ':' + minutes + ':' + seconds);
+            alert(time);
+        }
+        this.three=function(){
+            var xhh=['笑话1','笑话2','笑话3','笑话4','笑话5 ', '笑话6' ];
+             var r=Math.floor(Math.random()*xhh.length);
+            var r=xhh[r];
+             return r;
+
+        }
+
+    }
+    var Xiaona=new XiaoNa();
+    while(true){
+        
+    
+        // 咨询
+        var jmm= Xiaona.zixun();
+        // 退出
+        if(jmm==='q'){
+            alert('你真的不要我了吗')
+            break;
+        }
+        switch(jmm){
+            case '1':
+            case '总和':
+            Xiaona.one();
+            break;
+
+            case '2':
+         case '时间':
+         Xiaona.two();
+         break;
+         case '3':
+          case '笑话':
+          var r = Xiaona.three();
+          alert(r);
+          break;
+          default:
+          alert('你不懂我');
+          break;
+
+        }
+
+    }
+</script>
+</html>
